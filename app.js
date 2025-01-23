@@ -1,6 +1,7 @@
+require('dotenv').config()
 const express = require('express')
 const app = express()
-const port = 3000
+const port = process.env.PORT || 4000 
 const usermodel = require('./models/user')
 const postmodel = require('./models/post')
 const cookieParser = require('cookie-parser')
@@ -10,7 +11,7 @@ const jwt = require("jsonwebtoken")
 const path = require('path')
 
 
-//import multer
+//imPORT multer
 const upload =require("./config/multer")
 
 
@@ -43,7 +44,6 @@ console.log(req.file)
 
 //above multer prac on top
 // ________________________________________________
-
 
 
 
@@ -209,4 +209,6 @@ console.log('login first')
 
 }
 
-app.listen(port)
+app.listen(port ,( )=>{
+    console.log(`app start on on PORT ${port}`)
+})
