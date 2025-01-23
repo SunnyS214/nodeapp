@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+    <div class=" p-10 space-y-2 h-screen w-full   bg-zinc-900 text-white">
+       <h2 class="text-3xl mb-7 p-4 underline underline-offset-8 hover:text-yellow-400 text-blue-700">Edit Post page</h2>
+ 
+
+        <form action="/update/<%= post._id %>" method="post">
+<h2 class="bg-red-700"> 
+</h2>
+            
+<textarea name="content" id="" class="w-[450px] text-2xl resize-none  outline-none  bg-zinc-800 mb-4 text-zinc-300 w-1/2 block p-7 border-2 bg-transparent rounded-lg"  > <%= post.content %></textarea>
+               
+
+
+
+
+
+            <input type="submit" value="update" class=" hover:bg-yellow-400 hover:text-black  block w-40 bg-blue-700 p-3  rounded-lg  mb-4  ">
+        </form>
+        
+
+          
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+    <div class=" p-10 space-y-2 h-screen w-full   bg-zinc-900 text-white">
+        <div class="link flex justify-end gap-2 ">
+            <a href="/logout" class=" font-semibold hover:bg-red-700 rounded-lg px-3  py-3 bg-red-500"> Log Out</a>
+            <a href="/profile/upload" class=" font-semibold hover:bg-yellow-600 rounded-lg px-2  py-2 bg-yellow-500">Change Profile</a>
+
+        </div>
+        <h1 class="text-3xl pb-5">Profile Page</h1>
+
+<div class="header flex items-center gap-4 pb-5">
+
+    
+<div class="w-20 h-20  border-2 border-zinc-500 overflow-hidden rounded-[50%]  "><img class="w-full h-full object-cover" src="/images/uploads/<%= user.profilepic %>" alt=""></div>
+<h2 class="text-3xl" >hellow,<%= user.name %> 👋</h2>
+ 
+
+</div>
+<h5>You can create A new Post</h5>
+
+        <form action="/post" method="post">
+            <input type="text" placeholder="whats on your mind" name="content"
+                class="w-[450px] h-[100px]  bg-zinc-800 mb-4 text-white w-1/2 block p-7 border-2 bg-transparent rounded-lg  ">
+            <input type="submit" class="block w-40 bg-blue-700 p-3  rounded-lg  mb-4  ">
+        </form>
+        <h3>YOur all posts</h3>
+        <div class="posts  w-1/2  flex  gap-2">
+
+            <div class="postcontainer p-4 border-zinc-500 flex gap-4 ">
+                <% user.posts.forEach(function(post){%>
+                    <div class="border-2 min-h-[100px] min-w-[300px] flex flex-col  border-zinc-500  bg-zinc-800  p-4 rounded-lg mt-2 ">
+                    <h4 class="text-2xl underline underline-offset-4 font-semibold text-yellow-400"> @<%= user.username %>
+                    </h4>
+                    <p class="pt-2 text-xl text-white mt-5 flex pb-2  "><%= post.content %></p>
+
+                   
+                    <div  class="link text-3xl mb-[5px] inline-block align-bottom p-3 flex border-t-[3px] border-zinc-500  justify-around">
+                        <small><%= post.likes.length %> likes</small>
+
+                        <a href="/like/<%= post._id %>" class="text-[25px]  hover:text-blue-800 "  ><%= post.likes.indexOf(user._id) === -1 ? "Like" : "Unlike" %> </a>
+                        <a href="/edit/<%= post._id %>"><ion-icon name="create-outline"></ion-icon></a>
+    
+                    </div>
+                </div>
+                    <%}) %>
+            </div>
+            
+         
+
+        </div>
+
+    </div>
+
+
+
+</body>
+
+</html>
+
+<!-- 
+<h2> userName : <%= user.name %></h2>
+<h2> userUsername : <%= user.username %></h2>
+<h2> userAge : <%= user.age %></h2> -->

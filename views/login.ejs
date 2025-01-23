@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+    <div  class="  h-screen w-full bg-zinc-900 text-white" >
+
+<form action="/login" method="post" class=" m-auto font-semibold w-1/2	  p-5  flex flex-col space-y-4 text-black">
+    <h3 class="  m-auto text-xl underline  underline-offset-4 text-white">Log IN</h3>
+
+<input  class="rounded-lg p-3  max-w-72 outline-none"  type="text" name="email" placeholder="email">
+<input   class="rounded-lg p-2 max-w-72 outline-none text-black" type="password" name="password" placeholder="password" >
+<input  class="rounded-lg p-2 max-w-40  bg-cyan-500 text-white hover:bg-blue-700"  type="submit"  value="LogIn Account">
+<div class="link  flex gap-4 text-white pt-2 m-auto " >
+    <a href="/" class=" font-normal underline underline-offset-4 hover:text-blue-700 ">Create Account</a>
+    <a href="">|</a>
+    <a href="/test" class=" font-normal underline underline-offset-4 hover:text-yellow-500">test anoter login</a>
+</div>
+</form>
+    </div>
+</body>
+</html>
